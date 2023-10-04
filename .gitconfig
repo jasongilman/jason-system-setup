@@ -1,0 +1,39 @@
+[color]
+  # Turn on color console output
+  ui = always
+[alias]
+  #Short
+  st = status
+  br = branch
+  co = checkout
+  last = log -1 HEAD
+  unstage = reset HEAD
+  # Quick change
+  cp = !sh -c 'git add . && git commit -m \"$0\" && git push'
+  #Diffs
+  dm = diff HEAD --
+  dml = diff --name-status HEAD --
+  # List outgoing changes
+  dslo = log remotes/origin/master.. --stat --abbrev-commit --date=relative
+  # List incoming changes
+  dsli = log master..remotes/origin/master --stat --abbrev-commit --date=relative
+[core]
+  editor = vi
+  # Sets arguments used when git calls less.  I add tab stops at convenient places for log messages.
+  pager = less -FXRS -x17,26
+[format]
+  # Format for log messages used by "git log".  Puts everything on one line with nicely aligned columns.
+  # Fields: Time, User name, Hash, Commit subject, Ref names (if available)
+  # See: http://www.kernel.org/pub/software/scm/git/docs/git-log.html#_pretty_formats
+  # For colors, see color.branch option: http://www.kernel.org/pub/software/scm/git/docs/git-config.html#_variables
+  pretty = %Creset%Cblue%cr\t%C(cyan bold)%an%Creset\t%C(yellow)%h%Creset %s%C(magenta)%d%Creset
+[push]
+  default = current
+[branch]
+  autosetuprebase = always
+  autosetupmerge = always
+[user]
+	email = THE_EMAIL
+	name = Jason Gilman
+[init]
+	defaultBranch = main
