@@ -125,5 +125,11 @@
     "[markdown]": {
       "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/*/**": true,
+      "**/.venv/**": true
+    }
 }

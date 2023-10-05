@@ -65,7 +65,7 @@ function code() {
 
   if [[ -d "$path" ]]; then
     # Look for a VSCode workspace file
-    workspace=$(find "$path" -depth 1 -name "*.code-workspace" | head -n 1)
+    workspace=$(find "$path" -maxdepth 1 -name "*.code-workspace" | head -n 1)
 
     if [[ "$workspace" != "" ]]; then
       # Open visual studio code workspace if present
