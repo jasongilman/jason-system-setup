@@ -57,18 +57,20 @@ function cd() {
   fi
 }
 
+export ORIGINAL_CODE="${ORIGINAL_CODE:-$(which code)}"
+
 # Replaces vscode command to open a workspace
 function code() {
   path=$1
 
   if [[ -d "$path" ]]; then
     # Look for a VSCode workspace file
-    workspace=$(find "$path" -name "*.code-workspace" -depth 1 | head -n 1)
+    workspace=$(find "$path" -depth 1 -name "*.code-workspace" | head -n 1)
 
     if [[ "$workspace" != "" ]]; then
       # Open visual studio code workspace if present
       path="$workspace"
     fi
   fi
-  /usr/local/bin/code "$path"
+  "$ORIGINAL_CODE" "$path"
 }
