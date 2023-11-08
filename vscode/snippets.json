@@ -1,0 +1,96 @@
+{
+  "log var python": {
+    "scope": "python",
+    "prefix": "log var",
+    "body": [
+      "print(\"-----------------------------------\")",
+      "print(\"$1:\", $1)"
+    ],
+    "description": "Log output to console"
+  },
+  "log var pretty": {
+    "scope": "python",
+    "prefix": "log var pretty",
+    "body": [
+      "print(\"-----------------------------------\")",
+      "print(\"$1:\", json.dumps($1, indent=2, sort_keys=True, cls=McpJsonEncoder))",
+    ],
+    "description": "Log output to console"
+  },
+  "pprint json": {
+    "scope": "python",
+    "prefix": "pretty print json",
+    "body": [
+      "print(\"-----------------------------------\")",
+      "print(json.dumps($1, indent=2, sort_keys=True, cls=McpJsonEncoder))"
+    ],
+    "description": "Log output to console"
+  },
+  "stop": {
+    "scope": "python",
+    "prefix": "stop",
+    "body": [
+      "raise Exception('stop')"
+    ],
+    "description": "throw exception to halt execution"
+  },
+  "import json": {
+    "scope": "python",
+    "prefix": "import json",
+    "body": [
+      "from mcp_python_common.util import McpJsonEncoder",
+      "import json"
+    ]
+  },
+  "boto docs": {
+    "scope": "python",
+    "prefix": "boto docs",
+    "body": [
+      "help(boto3.client('$1').$2)"
+    ]
+  },
+  "dataclass": {
+    "scope": "python",
+    "prefix": "dataclass",
+    "body": [
+      "@dataclass(frozen=True)",
+      "class $1:",
+      "    \"\"\"TODO.\"\"\"",
+      "    $2"
+    ],
+    "description": "Creates a frozen data class"
+  },
+  "pydoc": {
+    "scope": "python",
+    "prefix": "pydoc",
+    "body": [
+      "\"\"\"TODO$0.\"\"\""
+    ],
+    "description": "Inserts empty pydoc"
+  },
+  "separator": {
+    "scope": "shellscript",
+    "prefix": "separator",
+    "body": [
+      "####################################################################################################"
+    ],
+    "description": "Inserts a bunch of comment characters as a visual separator"
+  },
+  "log var bash": {
+    "scope": "shellscript",
+    "prefix": "log var",
+    "body": [
+      "echo \"-------------------------------------\"",
+      "echo \"$0: $$0\""
+    ],
+    "description": "Logs a var in a bash script"
+  },
+  "shellcheck disable": {
+    "scope": "shellscript",
+    "prefix": "shellcheck disable",
+    "body": [
+      "# shellcheck disable=SC$1"
+    ],
+    "description": "Disables a shellcheck rule"
+  }
+}
