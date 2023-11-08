@@ -34,14 +34,6 @@
     ],
     "description": "throw exception to halt execution"
   },
-  "import json": {
-    "scope": "python",
-    "prefix": "import json",
-    "body": [
-      "from mcp_python_common.util import McpJsonEncoder",
-      "import json"
-    ]
-  },
   "boto docs": {
     "scope": "python",
     "prefix": "boto docs",
