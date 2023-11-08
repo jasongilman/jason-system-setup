@@ -1,3 +1,6 @@
+[user]
+  name = Jason Gilman
+  email = THE_EMAIL
 [color]
   # Turn on color console output
   ui = always
@@ -32,8 +35,5 @@
 [branch]
   autosetuprebase = always
   autosetupmerge = always
-[user]
-	email = THE_EMAIL
-	name = Jason Gilman
 [init]
-	defaultBranch = main
+  defaultBranch = main

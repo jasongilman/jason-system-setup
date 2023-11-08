@@ -11,14 +11,14 @@
     "workbench.tree.indent": 18,
     "security.workspace.trust.untrustedFiles": "open",
     "shellcheck.exclude": [
-        "1091",
-        "2002",
-        "2230",
-        "2312",
-        "2250",
-        "2310",
-        "2311",
-        "1090"
+      "1091",
+      "2002",
+      "2230",
+      "2312",
+      "2250",
+      "2310",
+      "2311",
+      "1090"
     ],
     "files.insertFinalNewline": true,
     "hediet.vscode-drawio.theme": "atlas",
@@ -26,15 +26,15 @@
     "terminal.integrated.defaultProfile.osx": "bash",
     "python.venvPath": ".venv",
     "python.venvFolders": [
-        ".venv"
+      ".venv"
     ],
     "python.analysis.autoImportCompletions": true,
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.insertSpaces": true,
-        "editor.tabSize": 4,
-        "editor.formatOnType": true,
-        "editor.formatOnSave": true
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.insertSpaces": true,
+      "editor.tabSize": 4,
+      "editor.formatOnType": true,
+      "editor.formatOnSave": true
     },
     "yaml.customTags": [
       "!And",
@@ -67,21 +67,21 @@
     ],
     "yaml.validate": false,
     "shellcheck.customArgs": [
-        "--severity=style",
-        "--enable=all",
-        "-x"
+      "--severity=style",
+      "--enable=all",
+      "-x"
     ],
     "explorer.confirmDelete": false,
     "window.doubleClickIconToClose": true,
     "[terraform]": {
-        "editor.defaultFormatter": "hashicorp.terraform",
-        "editor.formatOnSave": true,
-        "editor.formatOnSaveMode": "file"
+      "editor.defaultFormatter": "hashicorp.terraform",
+      "editor.formatOnSave": true,
+      "editor.formatOnSaveMode": "file"
     },
     "[terraform-vars]": {
-        "editor.defaultFormatter": "hashicorp.terraform",
-        "editor.formatOnSave": true,
-        "editor.formatOnSaveMode": "file"
+      "editor.defaultFormatter": "hashicorp.terraform",
+      "editor.formatOnSave": true,
+      "editor.formatOnSaveMode": "file"
     },
     "editor.multiCursorModifier": "ctrlCmd",
     "shellcheck.executablePath": "/usr/local/bin/shellcheck",
@@ -90,7 +90,7 @@
     "terraform.codelens.referenceCount": true,
     "jupyter.notebookFileRoot": "${workspaceFolder}",
     "files.associations": {
-        "*.hcl": "terraform"
+      "*.hcl": "terraform"
     },
     "editor.detectIndentation": false,
     "cfnLint.path": "scripts/cfn-linter/.venv/bin/cfn-lint",
@@ -108,9 +108,7 @@
     "remote.SSH.connectTimeout": 60,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.fontSize": 14,
-    "python.autoComplete.extraPaths": [
-
-    ],
+    "python.autoComplete.extraPaths": [],
     "python.analysis.extraPaths": [],
     "powershell.integratedConsole.showOnStartup": false,
     "powershell.integratedConsole.forceClearScrollbackBuffer": true,
