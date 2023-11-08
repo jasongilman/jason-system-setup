@@ -1,0 +1,15 @@
+{
+  "_comment": "This configures pyright for type checks",
+  "typeCheckingMode": "strict",
+  "reportUnknownArgumentType": "error",
+  "reportShadowedImports": "error",
+  "reportImplicitStringConcatenation": "none",
+  "reportPropertyTypeMismatch": "error",
+  "reportUnknownVariableType": "error",
+  "reportUnnecessaryComparison": "error",
+  "reportTypedDictNotRequiredAccess": "none",
+  "ignore": [
+    ".venv",
+    "temp"
+  ]
+}
