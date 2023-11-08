@@ -13,7 +13,7 @@
     "prefix": "log var pretty",
     "body": [
       "print(\"-----------------------------------\")",
-      "print(\"$1:\", json.dumps($1, indent=2, sort_keys=True, cls=McpJsonEncoder))",
+      "print(\"$1:\", json.dumps($1, indent=2, sort_keys=True))"
     ],
     "description": "Log output to console"
   },
@@ -22,7 +22,7 @@
     "prefix": "pretty print json",
     "body": [
       "print(\"-----------------------------------\")",
-      "print(json.dumps($1, indent=2, sort_keys=True, cls=McpJsonEncoder))"
+      "print(json.dumps($1, indent=2, sort_keys=True))"
     ],
     "description": "Log output to console"
   },
