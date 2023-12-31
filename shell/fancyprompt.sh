@@ -22,7 +22,7 @@ host=$(echo -n $HOSTNAME | sed -e "s/[\.].*//")
 datenow=$(date "+%a, %d %b %y")
 let promptsize=$(echo -n "-----($user@$host ddd., DD mmm YY)$(parse_git_branch)(${PWD})-" \
                  | wc -c | tr -d " ")
-let fillsize=${COLUMNS}-${promptsize}
+let fillsize=${COLUMNS}-${promptsize}-1
 fill=""
 while [ "$fillsize" -gt "0" ]
 do
