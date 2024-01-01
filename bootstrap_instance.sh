@@ -21,3 +21,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 pyenv install 3.11
+
+cp .gitconfig ~/
+
+echo "Edit ~/.gitconfig to enter your email address if not jason@element84.com"
