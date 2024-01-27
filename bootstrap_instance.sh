@@ -10,9 +10,24 @@ cat <<EOF >> ~/.bashrc
 source "$SCRIPT_DIR/shell/common_profile.sh"
 EOF
 
-sudo yum install -y git
+sudo amazon-linux-extras install epel -y
 
-sudo yum install -y gcc make patch zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel
+sudo yum install -y \
+  git \
+  gcc \
+  make \
+  patch \
+  zlib-devel \
+  bzip2 \
+  bzip2-devel \
+  readline-devel \
+  sqlite \
+  sqlite-devel \
+  openssl-devel \
+  tk-devel \
+  libffi-devel \
+  xz-devel \
+  ShellCheck
 
 curl https://pyenv.run | bash
 
