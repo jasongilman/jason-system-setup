@@ -35,6 +35,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# Fix for amazon linux 2
+sudo yum remove openssl-devel -y
+sudo yum install openssl11-devel -y
+
 pyenv install 3.11
 
 cp .gitconfig ~/
