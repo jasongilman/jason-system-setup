@@ -40,6 +40,7 @@ sudo yum remove openssl-devel -y
 sudo yum install openssl11-devel -y
 
 pyenv install 3.11
+pyenv global 3.11
 
 cp .gitconfig ~/
 
