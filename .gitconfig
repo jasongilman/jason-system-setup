@@ -20,6 +20,7 @@
   dslo = log remotes/origin/master.. --stat --abbrev-commit --date=relative
   # List incoming changes
   dsli = log master..remotes/origin/master --stat --abbrev-commit --date=relative
+  my-commits-last-month = !git log --author=\"$(git config user.name)\" --before=\"$(date \"+%Y-%m-01\")\" --after=\"$(date -v-1m \"+%Y-%m-01\")\" --reverse --pretty=format:\"%cd  %h  %s\" --date=short
 [core]
   editor = vi
   # Sets arguments used when git calls less.  I add tab stops at convenient places for log messages.
