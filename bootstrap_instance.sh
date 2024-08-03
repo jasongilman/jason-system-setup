@@ -11,9 +11,9 @@ source "$SCRIPT_DIR/shell/common_profile.sh"
 EOF
 
 release_version=$(cat /etc/system-release)
-AL2023_VERSION="Amazon Linux release 2023 (Amazon Linux)"
+AL2023_VERSION="Amazon Linux release 2023"
 
-if [[ $release_version != $AL2023_VERSION ]]; then
+if [[ $release_version != $AL2023_VERSION* ]]; then
   # 2023 doesn't support epel
   sudo amazon-linux-extras install epel -y
 fi
@@ -34,7 +34,7 @@ sudo yum install -y \
   libffi-devel \
   xz-devel
 
-if [[ $release_version != $AL2023_VERSION ]]; then
+if [[ $release_version != $AL2023_VERSION* ]]; then
   # 2023 doesn't support epel so I can't figure out how to install shellcheck
   yum install -y ShellCheck
 fi
@@ -45,7 +45,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-if [[ $release_version != $AL2023_VERSION ]]; then
+if [[ $release_version != $AL2023_VERSION* ]]; then
   # Fix for amazon linux 2
   sudo yum remove openssl-devel -y
   sudo yum install openssl11-devel -y
