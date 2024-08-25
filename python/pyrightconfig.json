@@ -1,5 +1,6 @@
 {
   "_comment": "This configures pyright for type checks",
+  "pythonVersion": "3.12",
   "typeCheckingMode": "strict",
   "reportUnknownArgumentType": "error",
   "reportShadowedImports": "error",
@@ -8,8 +9,11 @@
   "reportUnknownVariableType": "error",
   "reportUnnecessaryComparison": "error",
   "reportTypedDictNotRequiredAccess": "none",
+  "reportUninitializedInstanceVariable": "error",
+  "reportUnknownMemberType": "error",
+  "reportGeneralTypeIssues": true,
   "ignore": [
     ".venv",
     "temp"
-  ]
+  ],
 }
