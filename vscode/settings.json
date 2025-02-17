@@ -1,13 +1,31 @@
 {
   "python.analysis.completeFunctionParens": true,
   "python.analysis.typeCheckingMode": "strict",
+  "python.venvPath": ".venv",
+  "python.venvFolders": [
+    ".venv"
+  ],
+  "python.analysis.autoImportCompletions": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+  "python.analysis.diagnosticMode": "workspace",
+  "python.terminal.activateEnvironment": false,
+
   "editor.tabSize": 2,
   "editor.rulers": [100],
   "workbench.settings.openDefaultKeybindings": true,
   "editor.tabCompletion": "on",
   "files.trimTrailingWhitespace": true,
   "files.trimFinalNewlines": true,
-  "python.analysis.diagnosticMode": "workspace",
   "workbench.tree.indent": 18,
   "security.workspace.trust.untrustedFiles": "open",
   "shellcheck.exclude": [
@@ -24,48 +42,6 @@
   "hediet.vscode-drawio.theme": "atlas",
   "explorer.confirmDragAndDrop": false,
   "terminal.integrated.defaultProfile.osx": "bash",
-  "python.venvPath": ".venv",
-  "python.venvFolders": [
-    ".venv"
-  ],
-  "python.analysis.autoImportCompletions": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.insertSpaces": true,
-    "editor.tabSize": 4,
-    "editor.formatOnType": true,
-    "editor.formatOnSave": true
-  },
-  "yaml.customTags": [
-    "!And",
-    "!And sequence",
-    "!If",
-    "!If sequence",
-    "!Not",
-    "!Not sequence",
-    "!Equals",
-    "!Equals sequence",
-    "!Or",
-    "!Or sequence",
-    "!FindInMap",
-    "!FindInMap sequence",
-    "!Base64",
-    "!Join",
-    "!Join sequence",
-    "!Cidr",
-    "!Ref",
-    "!Sub",
-    "!Sub sequence",
-    "!GetAtt",
-    "!GetAZs",
-    "!ImportValue",
-    "!ImportValue sequence",
-    "!Select",
-    "!Select sequence",
-    "!Split",
-    "!Split sequence"
-  ],
-  "yaml.validate": false,
   "shellcheck.customArgs": [
     "--severity=style",
     "--enable=all",
@@ -92,36 +68,26 @@
   "files.associations": {
     "*.pkrvars.hcl": "hcl",
     "*.pkr.hcl": "hcl",
-    "*.hcl": "terraform"
+    "*.hcl": "terraform",
+    "*.umm-json": "json"
   },
   "editor.detectIndentation": false,
-  "cfnLint.path": "scripts/cfn-linter/.venv/bin/cfn-lint",
   "notebook.output.textLineLimit": 75,
   "terraform.languageServer.terraform.path": "/usr/local/bin/terraform",
   "terraform.experimentalFeatures.validateOnSave": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "go.toolsManagement.autoUpdate": true,
   "explorer.autoReveal": false,
   "jupyter.interactiveWindow.creationMode": "perFile",
   "editor.minimap.enabled": false,
-  "aws.telemetry": false,
-  "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
-  "git.openRepositoryInParentFolders": "never",
   "remote.SSH.connectTimeout": 60,
-  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontSize": 14,
-  "python.autoComplete.extraPaths": [],
-  "python.analysis.extraPaths": [],
-  "powershell.integratedConsole.showOnStartup": false,
-  "powershell.integratedConsole.forceClearScrollbackBuffer": true,
-  "powershell.integratedConsole.suppressStartupBanner": true,
-  "powershell.integratedConsole.startInBackground": true,
+
   "terminal.integrated.scrollback": 2000,
   "terminal.integrated.commandsToSkipShell": [
     // Ensure the toggle sidebar visibility keybinding skips the shell
     "workbench.action.toggleSidebarVisibility"
   ],
-  "ansible.validation.lint.enabled": false,
   "workbench.startupEditor": "none",
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
@@ -133,5 +99,32 @@
     "**/node_modules/*/**": true,
     "**/.venv/**": true
   },
-  "aws.samcli.lambdaTimeout": 1234
+  "aws.samcli.lambdaTimeout": 1234,
+  "git.openRepositoryInParentFolders": "never",
+  "update.mode": "manual",
+  "continue.enableTabAutocomplete": false,
+  "markdown-word-count.selectionCount": true,
+  "continue.showInlineTip": false,
+  "jupyter.widgetScriptSources": [
+    "jsdelivr.com",
+    "unpkg.com"
+  ],
+  "lldb.suppressUpdateNotifications": true,
+  "python.analysis.packageIndexDepths": [
+    {
+      "name": "e84_geoai_common",
+      "depth": 4,
+      "includeAllSymbols": true
+    },
+    {
+      "name": "natural_language_geocoding",
+      "depth": 4,
+      "includeAllSymbols": true
+    },
+    {
+      "name": "shapely",
+      "depth": 3,
+      "includeAllSymbols": true
+    }
+  ]
 }
