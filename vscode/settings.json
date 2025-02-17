@@ -100,7 +100,6 @@
   },
   "aws.samcli.lambdaTimeout": 1234,
   "git.openRepositoryInParentFolders": "never",
-  "update.mode": "manual",
   "continue.enableTabAutocomplete": false,
   "markdown-word-count.selectionCount": true,
   "continue.showInlineTip": false,
