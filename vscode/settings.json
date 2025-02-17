@@ -39,7 +39,6 @@
     "1090"
   ],
   "files.insertFinalNewline": true,
-  "hediet.vscode-drawio.theme": "atlas",
   "explorer.confirmDragAndDrop": false,
   "terminal.integrated.defaultProfile.osx": "bash",
   "shellcheck.customArgs": [
