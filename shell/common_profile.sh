@@ -57,9 +57,9 @@ function cd() {
   fi
 }
 
-export ORIGINAL_CODE="${ORIGINAL_CODE:-$(which code)}"
-
+ORIGINAL_CODE="$(which code 2>/dev/null)"
 # Replaces vscode command to open a workspace
+if [[ -n "$ORIGINAL_CODE" ]]; then
 function code() {
   path=$1
 
@@ -74,3 +74,4 @@ function code() {
   fi
   "$ORIGINAL_CODE" "$path"
 }
+fi
