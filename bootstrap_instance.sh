@@ -51,8 +51,8 @@ if [[ $release_version != $AL2023_VERSION* ]]; then
   sudo yum install openssl11-devel -y
 fi
 
-pyenv install 3.11
-pyenv global 3.11
+pyenv install 3.12
+pyenv global 3.12
 
 cp .gitconfig ~/
 
