@@ -39,14 +39,29 @@ class InstanceState(Enum):
 
 @app.command()
 def change_instance_state(
-    state: InstanceState,
-    instance_ids: list[str],
+    state: InstanceState, instance_ids: list[str], force: bool = False
 ):
+    if force and (state != InstanceState.terminate and state != InstanceState.stop):
+        print("The force flag can only be used when terminating or stopping.")
+
     instance_ids = [
         instance_id if instance_id.startswith("i-") else f"i-{instance_id}"
         for instance_id in instance_ids
     ]
 
+    if force:
+        for instance_id in instance_ids:
+            # Allow stopping the instance
+            ec2.modify_instance_attribute(
+                InstanceId=instance_id,
+                DisableApiStop={"Value": False},
+            )
+            if state == InstanceState.terminate:
+                # Allow terminating the instance
+                ec2.modify_instance_attribute(
+                    InstanceId=instance_id,
+                    DisableApiTermination={"Value": False},
+                )
     state.fn(InstanceIds=instance_ids)
 
     print(f"Waiting for instances to {state}")
