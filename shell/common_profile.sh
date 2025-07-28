@@ -3,6 +3,7 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 source "$SCRIPT_DIR/fancyprompt.sh"
+source "$SCRIPT_DIR/../aws_utils/exports.sh"
 
 # Enable AWS CLI completion
 complete -C '/usr/bin/aws_completer' aws

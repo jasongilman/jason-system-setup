@@ -26,6 +26,11 @@ eval "$(pyenv init -)"
 pyenv install 3.12
 pyenv global 3.12
 
+pip install uv
+
 cp .gitconfig ~/
+
+# Setup the AWS utils
+"$SCRIPT_DIR/aws_utils/setup.sh"
 
 echo "Edit ~/.gitconfig to enter your email address if not jason@element84.com"
