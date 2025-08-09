@@ -55,7 +55,7 @@ pyenv install 3.12
 pyenv global 3.12
 pip install uv
 
-cp .gitconfig ~/
+cp "$SCRIPT_DIR/.gitconfig" ~/
 
 # Setup the AWS utils
 "$SCRIPT_DIR/aws_utils/setup.sh"
