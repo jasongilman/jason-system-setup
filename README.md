@@ -10,30 +10,24 @@
 
 ## Optional EC2 instance setup
 
+### Install Node
+
+1. Install [NVM](https://github.com/nvm-sh/nvm)
+   1. Check for newer install command first
+   2. `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash`
+2. Install node
+   1. `nvm install node`
+
 ### Install CDKTF and terraform
 
-1. Install node
-   1. `sudo dnf install nodejs`
-2. Update npm global path
-   1. Add this to .bashrc
+1. `npm install --global cdktf-cli`
+2. Install terraform
 
 ```shell
-# Add npm-global to path.
-# See https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally#manually-change-npms-default-directory
-export PATH=~/.npm-global/bin:$PATH
+sudo dnf install -y dnf-plugins-core
+sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+sudo dnf -y install terraform
 ```
-
-3. `npm install --global cdktf-cli`
-4. Install terraform
-
-
-
-```shell
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
-sudo yum -y install terraform
-```
-
 
 ## Shell setup instructions
 

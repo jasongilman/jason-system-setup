@@ -75,21 +75,27 @@ def list_instances():
     instances: list[list[str]] = []
     for reservation in response["Reservations"]:
         for instance in reservation["Instances"]:
-            name = ""
-            for tag in instance.get("Tags", []):
-                if tag["Key"] == "Name":
-                    name = tag["Value"]
-                    break
+            state = instance["State"]["Name"]
 
-            instances.append(
-                [
-                    instance["InstanceId"],
-                    name,
-                    instance["State"]["Name"],
-                    instance["InstanceType"],
-                    instance["LaunchTime"].strftime("%Y-%m-%d %H:%M:%S"),
-                ]
-            )
+            if state != "terminated":
+                name = ""
+                for tag in instance.get("Tags", []):
+                    if tag["Key"] == "Name":
+                        name = tag["Value"]
+                        break
+
+                instances.append(
+                    [
+                        instance["InstanceId"],
+                        name,
+                        instance["State"]["Name"],
+                        instance["InstanceType"],
+                        instance["LaunchTime"].strftime("%Y-%m-%d %H:%M:%S"),
+                    ]
+                )
+
+    # Sort by launch time
+    instances = sorted(instances, key=lambda i: i[-1])
 
     typer.echo(
         tabulate(

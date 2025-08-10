@@ -20,7 +20,7 @@ ROLE_NAME = f"{DEVELOPER_NAME}_instance"
 AMI_SSM_PARAMETER_PREFIX = (
     "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-"
 )
-DEFAULT_INSTANCE_TYPE = "t4g.micro"
+DEFAULT_INSTANCE_TYPE = "t4g.medium"
 
 
 class TaggedItem(TypedDict):
@@ -95,9 +95,21 @@ def find_ami(architecture: str = "arm64") -> str:
     ]["Value"]
 
 
+def get_ssh_public_key() -> str:
+    ssh_key_path = os.path.expanduser("~/.ssh/id_rsa.pub")
+    try:
+        with open(ssh_key_path, "r") as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        raise RuntimeError(f"SSH public key not found at {ssh_key_path}")
+
+
 USER_DATA = """#cloud-config
 packages:
   - git
+
+ssh_authorized_keys:
+  - {get_ssh_public_key()}
 
 runcmd:
   - sudo -u ec2-user git clone https://github.com/jasongilman/jason-system-setup.git /home/ec2-user/jason-system-setup
@@ -133,7 +145,7 @@ def launch_instance(
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M")
         name = f"{DEVELOPER_NAME} {current_time}"
 
-    ec2.run_instances(
+    instance = ec2.run_instances(
         BlockDeviceMappings=[
             {
                 "DeviceName": "/dev/xvda",
@@ -159,4 +171,12 @@ def launch_instance(
         ],
         MetadataOptions={"HttpTokens": "required"},
         IamInstanceProfile={"Arn": profile_arn},
-    )
+    )["Instances"][0]
+
+    instance_id = instance["InstanceId"]
+
+    print(f"Instance {instance_id} with name {name} launched.")
+
+
+if __name__ == "__main__":
+    app()
