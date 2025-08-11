@@ -104,7 +104,7 @@ def get_ssh_public_key() -> str:
         raise RuntimeError(f"SSH public key not found at {ssh_key_path}")
 
 
-USER_DATA = """#cloud-config
+USER_DATA = f"""#cloud-config
 packages:
   - git
 
