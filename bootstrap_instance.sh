@@ -10,7 +10,7 @@ cat <<EOF >> ~/.bashrc
 source "$SCRIPT_DIR/shell/common_profile.sh"
 EOF
 
-sudo dnf groupinstall "Development Tools"
+sudo dnf groupinstall "Development Tools" -y
 
 sudo dnf install -y \
   git \
