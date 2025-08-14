@@ -6,7 +6,7 @@ source "$SCRIPT_DIR/fancyprompt.sh"
 source "$SCRIPT_DIR/../aws_utils/exports.sh"
 
 # Enable AWS CLI completion
-complete -C '/usr/bin/aws_completer' aws
+complete -C '/usr/local/bin/aws_completer' aws
 
 ################################################################################
 # PYENV copy and pasted
