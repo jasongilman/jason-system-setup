@@ -59,7 +59,7 @@
     "editor.formatOnSaveMode": "file"
   },
   "editor.multiCursorModifier": "ctrlCmd",
-  "shellcheck.executablePath": "/usr/local/bin/shellcheck",
+  "shellcheck.executablePath": "/opt/homebrew/bin/shellcheck",
   "shellcheck.disableVersionCheck": true,
   "explorer.fileNesting.enabled": true,
   "terraform.codelens.referenceCount": true,
@@ -72,7 +72,7 @@
   },
   "editor.detectIndentation": false,
   "notebook.output.textLineLimit": 75,
-  "terraform.languageServer.terraform.path": "/usr/local/bin/terraform",
+  "terraform.languageServer.terraform.path": "/opt/homebrew/bin/terraform",
   "terraform.experimentalFeatures.validateOnSave": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "explorer.autoReveal": false,
@@ -81,7 +81,6 @@
   "remote.SSH.connectTimeout": 60,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontSize": 14,
-
   "terminal.integrated.scrollback": 2000,
   "terminal.integrated.commandsToSkipShell": [
     // Ensure the toggle sidebar visibility keybinding skips the shell
@@ -91,7 +90,6 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
-  "redhat.telemetry.enabled": false,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
@@ -110,13 +108,17 @@
   "lldb.suppressUpdateNotifications": true,
   "python.analysis.packageIndexDepths": [
     {
+      "name": "geojson_pydantic",
+      "depth": 2
+    },
+    {
       "name": "e84_geoai_common",
       "depth": 4,
       "includeAllSymbols": true
     },
     {
       "name": "natural_language_geocoding",
-      "depth": 4,
+      "depth": 5,
       "includeAllSymbols": true
     },
     {
@@ -124,5 +126,7 @@
       "depth": 3,
       "includeAllSymbols": true
     }
-  ]
+  ],
+  "chat.commandCenter.enabled": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
 }
