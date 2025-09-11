@@ -29,17 +29,27 @@ sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinu
 sudo dnf -y install terraform
 ```
 
-## Shell setup instructions
+## Mac setup instructions
 
-Add these to `~/.bashrc`
+Add these to `~/.profile`
 
 ```Shell
 source <PATH_TO_REPO>/shell/common_profile.sh
-# If on a mac
 source <PATH_TO_REPO>/shell/mac_profile.sh
 ```
+Run `aws_utils/setup.sh`
 
 
-## VSCode Setup instructions
+### Setup Size Up
 
-`cp vscode/* "~/Library/Application Support/Code/User/"`
+1. Install Size Up
+2. Quit the application
+3. `cp ./mac_specific/com.irradiatedsoftware.SizeUp.plist ~/Library/Preferences/`
+4. Restart your computer
+5. Set Size Up to start automatically on log in
+
+
+
+### VSCode Setup instructions
+
+`cp -r vscode/* ~/Library/Application\ Support/Code/User/`
